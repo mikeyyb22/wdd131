@@ -16,6 +16,7 @@
 
 header {
     background: var(--primary-color);
+    color: #fff;
     border: var(--border-standard);
     width: 100%;
     margin: 0;
