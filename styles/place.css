@@ -7,6 +7,11 @@
     --border-transparent: 1px solid rgba(0, 0, 0, 0.5);
 }
 
+* {
+    font-family: "Crimson Text", serif;
+    font-style: normal;
+}
+
 header {
     background: var(--primary-color);
     width: 100%;
@@ -21,6 +26,10 @@ h1 {
     margin: 20px;
 }
 
+.hero-wrapper {
+    position: relative;
+}
+
 .hero {
     border-left: var(--border-transparent);
     border-right: var(--border-transparent);
@@ -29,6 +38,7 @@ h1 {
     border-radius: 2px;
     margin: 0;
     display: block;
+    position: relative;
 }
 
 .data {
@@ -97,10 +107,66 @@ h1 {
     max-width: 500px;
 }
 
+.weather-info span {
+    display: contents;
+}
+
 .weather-info li {
     display: contents;
 }
 
 .weather-info strong {
     text-align: right;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    border: var(--border-standard);
+    border-radius: 2px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+}
+
+footer p {
+    margin: 10px;
+    padding-top: 10px;
+}
+
+#lastModified {
+    padding-bottom: 10px;
+}
+
+@media screen and (min-width: 1000px) {
+    .data {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 300px;
+        border: var(--border-transparent);
+        border-radius: 10px;
+    }
+
+    .data ul {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .weather {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        width: 200px;
+        border: var(--border-transparent);
+        border-radius: 10px;
+    }
+
+    .weather-title::selection {
+        color: var(--secondary-color);
+    }
+
+    .weather ul {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brazil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/place.css">
     <script defer src="./scripts/place.js"></script>
 </head>
@@ -12,39 +15,43 @@
         <h1>Brazil</h1>
     </header>
     <main>
-        <picture>
-            <source srcset="./images/cristo-redentor-large.webp" media="(min-width: 1000px)">
-            <source srcset="./images/cristo-redentor-small.webp" media="(min-width: 550px)">
-            <img class="hero" src="./images/cristo-redentor-small.webp" alt="Cristo Redentor in Rio de Janeiro" width="100%">
-        </picture>
-        <div class="data">
-            <h2>Data</h2>
-            <ul class="data-info">
-                <li><strong>Area:</strong> 3.28 million sq mi</li>
-                <li><strong>Population:</strong> 213,262,611</li>
-                <li><strong>Capital:</strong> Brasília</li>
-                <li><strong>Language:</strong> Portuguese</li>
-                <li><strong>Currency:</strong> Brazilian Real</li>
-                <li><strong>Time Zone:</strong> Brasilia Standard Time (GMT-3)</li>
-                <li><strong>Calling Code:</strong> +55</li>
-                <li><strong>Internet TLD:</strong> .br</li>
-            </ul>
-        </div>
-        <div class="weather">
-            <div class="weather-title">
-                <h2>Weather</h2>
-                <img src="./images/weather-svgrepo-com.svg" alt="weather icon" width="50px">
+        <div class="hero-wrapper">
+            <picture>
+                <source srcset="./images/cristo-redentor-large.webp" media="(min-width: 1000px)">
+                <source srcset="./images/cristo-redentor-small.webp" media="(min-width: 550px)">
+                <img class="hero" src="./images/cristo-redentor-small.webp" alt="Cristo Redentor in Rio de Janeiro" width="100%">
+            </picture>
+            <div class="data">
+                <h2>Data</h2>
+                <ul class="data-info">
+                    <li><strong>Area:</strong> 3.28 million sq mi</li>
+                    <li><strong>Population:</strong> 213,262,611</li>
+                    <li><strong>Capital:</strong> Brasília</li>
+                    <li><strong>Language:</strong> Portuguese</li>
+                    <li><strong>Currency:</strong> Brazilian Real</li>
+                    <li><strong>Time Zone:</strong> Brasilia Standard Time (GMT-3)</li>
+                    <li><strong>Calling Code:</strong> +55</li>
+                    <li><strong>Internet TLD:</strong> .br</li>
+                </ul>
             </div>
-            <ul class="weather-info">
-                <li><strong>Temperature:</strong> 25&deg;C</li>
-                <li><strong>Conditions:</strong> Partly Cloudy</li>
-                <li><strong>Wind:</strong> 12 km/h</li>
-                <li><strong>Wind Chill:</strong> 21&deg;C</li>
-            </ul>     
-        </div> 
+            <div class="weather">
+                <div class="weather-title">
+                    <h2>Weather</h2>
+                    <img src="./images/weather-svgrepo-com.svg" alt="weather icon" width="50px">
+                </div>
+                <ul class="weather-info">
+                    <li><strong>Temperature: </strong><span id="temp">9</span> &deg;C</li>
+                    <li><strong>Conditions: </strong>Partly Cloudy</li>
+                    <li><strong>Wind: </strong><span id="wind">12</span>  km/h</li>
+                    <li><strong>Wind Chill: </strong><span id="wChill"></span>&deg;C</li>
+                </ul>
+            </div> 
+        </div>
+        
     </main>
     <footer>
-
+        <p>&copy; | <span id="currentyear"></span> | Michael McGehee | Brazil &#x1F1E7;&#x1F1F7;</p>
+        <p id="lastModified"></p>
     </footer>
 </body>
 </html>
