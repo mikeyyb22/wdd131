@@ -39,6 +39,7 @@ h1 {
     margin: 0;
     display: block;
     position: relative;
+    width: 100%;
 }
 
 .data {
@@ -161,8 +162,12 @@ footer p {
         border-radius: 10px;
     }
 
-    .weather-title::selection {
-        color: var(--secondary-color);
+    .weather-title {
+        position: relative;
+    }
+
+    .weather-title::after {
+        content: "☀️";
     }
 
     .weather ul {
