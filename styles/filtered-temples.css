@@ -1,0 +1,125 @@
+:root {
+    --neutral-color: #d3d3d3;
+    --dark-neutral-color: #a9a9a9;
+    --primary-color: #014d4e;
+    --secondary-color: #330066;
+    --font-size-large: 24px;
+    --border-standard: 1px solid #888888;
+}
+
+* {
+    font-family: "Merriweather", serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+header {
+    background: var(--primary-color);
+    color: #fff;
+    border: var(--border-standard);
+    width: 100%;
+    margin: 0;
+}
+
+#page-title {
+    display: block;
+    text-align: center;
+    font-size: 4rem;
+    color: #fff;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+#header-nav {
+    display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	list-style: none;
+	color: #fff;
+}
+
+#header-nav li {
+    list-style: none;
+}
+
+#header-nav a {
+    text-decoration: none;
+    display: none;
+    color: #fff;
+    border-right: var(--border-standard);
+    border-left: var(--border-standard);
+    padding-right: 25px;
+    padding-left: 25px;
+    font-size: 2rem;
+}
+
+#header-nav a:hover {
+    text-decoration: underline;
+}
+
+/* small view navigation */
+#menu {
+	font-size: 1.5rem;
+	border: 0;
+	background: none;
+	color: #000;
+ 	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#menu::before {
+	content: "☰";
+}
+
+#menu.open::before {
+	content: "❎";
+}
+
+#header-nav.open a {
+	display: block;
+}
+
+main { 
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-left: 0;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.grid {
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.grid figure {
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    height: 350px;
+    width: 80%;
+    border-radius: 5px;
+    border: var(--border-standard);
+}
+
+.grid img {
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.4);
+}
+
+.grid p, h2 {
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    text-align: center;
+    color: #fff;
+    font-size: 1.33rem;
+}
