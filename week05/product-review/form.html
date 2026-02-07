@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review</title>
+    <meta name="author" content="Michael McGehee">
+    <meta name="description" content="A form for a client to review a product out of a chosen list of products.">
+</head>
+<body>
+    <main>
+        <h1>Product Review</h1>
+        <form action="./review.html" method="get">
+            <fieldset>
+                <label for="product-name">Product Name</label>
+                <select id="product" name="product" required>
+                    <option value="" disabled selected>Select a Product</option>
+                </select>  
+                <label for="rating">Overall Rating</label>
+                    <label><input type="radio" id="one-star" name="rating" required>&star;</label>
+                    <label><input type="radio" id="two-stars" name="rating" required>&star;&star;</label>
+                    <label><input type="radio" id="three-stars" name="rating" required>&star;&star;&star;</label>
+                    <label><input type="radio" id="four-stars" name="rating" required>&star;&star;&star;&star;</label>
+                    <label><input type="radio" id="five-stars" name="rating" required>&star;&star;&star;&star;&star;</label>
+                <label for="date">Date of Installation</label>
+                    <input type="date" id="complete-date" required name="complete-date"></label>
+                <label for="useful">Which features did you find useful in the product? <i>(Check all that apply)</i></label>
+                    <label><input type="checkbox" id="durability" name="durability">Durability</label>
+                    <label><input type="checkbox" id="easeofuse" name="easeofuse">Ease of Use</label>
+                    <label><input type="checkbox" id="performance" name="performance">Performance</label>
+                    <label><input type="checkbox" id="design" name="design">Design</label>
+                <label for="review">Written Review <span>(Optional)</span></label>
+                    <textarea id="review" name="review" rows="5"></textarea>
+                <label for="user-name">Your Name <span>(Optional)</span></label>
+                    <label><input type="text" id="username" name="username"></label>
+            </fieldset>
+            <input type="submit" value="Post Review">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; | <span id="currentyear"></span> | Michael McGehee | Brazil</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
