@@ -1,0 +1,70 @@
+:root {
+    --primary-color: seagreen;
+    --border-default: 1px solid black;
+}
+
+* {
+    font-family: "Merriweather", serif;
+    max-width: 414px;
+    margin: 0 auto;
+}
+
+.title {
+    background-color: var(--primary-color);
+    text-align: center;
+    color: white;
+    padding: 15px;
+    margin: 5px 0px 5px 0px;
+    border: var(--border-default);
+    border-radius: 6px;
+}
+
+.feedback-form fieldset {
+    border: var(--border-default);
+    border-radius: 6px;
+}
+
+.subtitle {
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0rem;
+    color: navy;
+    font-weight: 600;
+}
+
+#product, #complete-date, #review, #username {
+    width: 100%;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.stars {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.stars label {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 60px;
+}
+
+.checkboxes {
+    display: flex;
+    margin: 5px;
+}
+
+.optional {
+    font-size: 0.8rem;
+    color: darkred;
+}
+
+input[type="submit"] {
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+    border-radius: 6px;
+    padding: 5px;
+}
