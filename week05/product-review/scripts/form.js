@@ -22,3 +22,7 @@ products.forEach(function(product) {
     option.textContent = product.name
     productSelect.appendChild(option);
 });
+
+let numVisits = Number(window.localStorage.getItem("visits-ls"));
+numVisits++;
+localStorage.setItem("visits-ls", numVisits);
