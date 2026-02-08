@@ -33,7 +33,7 @@
     font-weight: 600;
 }
 
-#product, #complete-date, #review, #username {
+#product-name, #date, #review, #username {
     width: 100%;
     padding: 2px;
     border-radius: 3px;
