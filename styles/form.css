@@ -3,10 +3,11 @@
     --border-default: 1px solid black;
 }
 
-* {
+*,
+*::before,
+*::after {
     font-family: "Merriweather", serif;
-    margin: 0 auto;
-    max-width: 600px;
+    box-sizing: border-box;
 }
 
 .title {
@@ -19,9 +20,26 @@
     border-radius: 6px;
 }
 
+.title h1 {
+    font-size: 1.6rem;
+}
+
+body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+feedback-form {
+    width: 100%;
+}
+
 .feedback-form fieldset {
     border: var(--border-default);
     border-radius: 6px;
+    min-width: 0;
+    width: 100%;
+    margin: 0;
 }
 
 .form-label {
@@ -41,8 +59,9 @@
 
 .stars {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .stars label {
@@ -69,9 +88,8 @@ input[type="submit"] {
     padding: 5px;
 }
 
-@media screen and (min-width: 640px) {
-    * {
-        margin: 0 auto;
-        width: 100%;
+@media (min-width: 640px) {
+    .title h1 {
+        font-size: 2.5rem;
     }
 }
