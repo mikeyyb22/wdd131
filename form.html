@@ -13,27 +13,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
+    <header>
         <div class="title">
             <h1>Product Review</h1>
         </div>
-        <form action="./review.html" method="get" class="feedback-form">
+    </header>
+    <main>
+        <form action="review.html" method="get" class="feedback-form">
             <fieldset>
-                <label for="product-name" class="subtitle">Product Name</label>
+                <label for="product-name" class="form-label">Product Name</label>
                 <select id="product" name="product" required>
                     <option value="" disabled selected>Select a Product</option>
                 </select>  
-                <label for="rating" class="subtitle">Overall Rating</label>
+                <label for="rating" class="form-label">Overall Rating</label>
                 <div class="stars">
-                    <label><input type="radio" id="one-star" name="rating" required>&star;</label>
-                    <label><input type="radio" id="two-stars" name="rating" required>&star;&star;</label>
-                    <label><input type="radio" id="three-stars" name="rating" required>&star;&star;&star;</label>
-                    <label><input type="radio" id="four-stars" name="rating" required>&star;&star;&star;&star;</label>
-                    <label><input type="radio" id="five-stars" name="rating" required>&star;&star;&star;&star;&star;</label>
+                    <label><input type="radio" id="one-star" value="one-star" name="rating" required>&star;</label>
+                    <label><input type="radio" id="two-stars" value="two-stars" name="rating" required>&star;&star;</label>
+                    <label><input type="radio" id="three-stars" value="three-stars" name="rating" required>&star;&star;&star;</label>
+                    <label><input type="radio" id="four-stars" value="four-stars" name="rating" required>&star;&star;&star;&star;</label>
+                    <label><input type="radio" id="five-stars" value="five-stars" name="rating" required>&star;&star;&star;&star;&star;</label>
                 </div>
-                <label for="date" class="subtitle">Date of Installation</label>
-                    <input type="date" id="complete-date" required name="complete-date"></label>
-                <label for="useful" class="subtitle">Which features did you find useful in the product? <i>(Check all that apply)</i></label>
+                <label for="date" class="form-label">Date of Installation</label>
+                    <input type="date" id="complete-date" required name="complete-date">
+                <label for="useful" class="form-label">Which features did you find useful in the product? <i>(Check all that apply)</i></label>
                 <div class="checkboxes">
                     <label><input type="checkbox" id="durability" name="durability">Durability</label>
                     <label><input type="checkbox" id="easeofuse" name="easeofuse">Ease of Use</label>
@@ -41,9 +43,9 @@
                     <label><input type="checkbox" id="design" name="design">Design</label>
                 </div>
                     
-                <label for="review" class="subtitle">Written Review <span class="optional">(Optional)</span></label>
+                <label for="review" class="form-label">Written Review <span class="optional">(Optional)</span></label>
                     <textarea id="review" name="review" rows="5"></textarea>
-                <label for="user-name" class="subtitle">Your Name <span class="optional">(Optional)</span></label>
+                <label for="user-name" class="form-label">Your Name <span class="optional">(Optional)</span></label>
                     <label><input type="text" id="username" name="username"></label>
             </fieldset>
             <input type="submit" value="Post Review">
