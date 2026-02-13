@@ -76,6 +76,11 @@ feedback-form {
     margin: 5px;
 }
 
+.req {
+    font-size: 0.8rem;
+    color: red;
+}
+
 .optional {
     font-size: 0.8rem;
     color: darkred;

@@ -14,7 +14,7 @@ const products = [
   { id: "jj-1969", name: "warp equalizer", averagerating: 5.0 }
 ];
 
-const productSelect = document.getElementById("product");
+const productSelect = document.getElementById("product-name");
 
 products.forEach(function(product) {
     const option = document.createElement("option");
@@ -23,6 +23,3 @@ products.forEach(function(product) {
     productSelect.appendChild(option);
 });
 
-let numVisits = Number(window.localStorage.getItem("visits-ls"));
-numVisits++;
-localStorage.setItem("visits-ls", numVisits);
