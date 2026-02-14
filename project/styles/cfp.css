@@ -160,7 +160,62 @@ header {
     padding: 5px;
 }
 
+.sub-title {
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 15px;
+    border-bottom: var(--border-standard);
+}
 
+.format-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.format-dropdown label {
+    margin-bottom: 10px;
+}
+
+.format-dropdown select {
+    width: 60%;
+    border-radius: 2px;
+}
+
+#other-format {
+    width: 60%;
+    margin: 5px;
+    background-color: var(--gold);
+    opacity: 80%;
+    color: var(--black);
+}
+
+.user-proposal {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.form-label {
+    display: block;
+}
+
+#username, #team-number, #proposal {
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 2px;
+}
+
+.required {
+    color: red;
+    font-size: 0.8rem;
+}
+
+input[type="submit"] {
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    border-radius: 6px;
+    padding: 5px;
+}
 
 footer {
     background-color: var(--gold);

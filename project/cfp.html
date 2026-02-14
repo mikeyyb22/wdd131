@@ -43,21 +43,26 @@
                 <figcaption>James Madison University participated in the 2025 playoff as the 24th-best team in the nation.</figcaption>
             </figure>   
         </div>
+        <div class="sub-title">Other proposed formats:</div>
         <div class="format-dropdown">
             <label for="formats">Choose a different proposed format below:</label>
             <select name="formats" id="formats">
                 <option value="" disabled selected>Select a Format</option>
             </select>
+            <p id="other-format"></p>
         </div>
+        <div class="sub-title">Think you can do better?</div>
         <form action="thank-you.html" method="get" class="user-proposal">
-            <div class="form-label">Your Name <span class="optional">(Optional)</span></div>
-            <label for="username"><input type="text" id="username" name="username"></label>
-            <div class="form-label">Number of teams <span class="required">*</span></div>
-            <label for="team-number"><input type="number" id="team-number" name="team-number" required></label>
-            <label for="proposal" class="form-label">Your Proposal <span class="required">*</span></label>
-            <textarea id="proposal" name="proposal" rows="5" required></textarea>
-            <span class="req">* - Required to submit proposal</span>
-            <input type="submit" value="Change the CFP">
+            <fieldset>
+                <div class="form-label">Your Name <span class="optional">(Optional)</span></div>
+                <label for="username"><input type="text" id="username" name="username"></label>
+                <div class="form-label">Number of teams <span class="required">*</span></div>
+                <label for="team-number"><input type="number" id="team-number" name="team-number" required></label>
+                <label for="proposal" class="form-label">Your Proposal <span class="required">*</span></label>
+                <textarea id="proposal" name="proposal" rows="5" required></textarea>
+            </fieldset>
+            <p><span class="required">*</span> - Required to submit proposal</p>
+            <input type="submit" id="submission" value="Change the CFP">
         </form>
 
     </body>
