@@ -24,15 +24,26 @@
             </ul>
         </nav>
     </header>
-    <body>
+    <main>
         <h1 class="title">A History of the CFB</h1>
-        <div class="format-dropdown">
-            <label for="year">Choose a year below to see who made the playoff.</label>
-            <select name="year" id="year">
-                <option value="" disabled selected>Select a Year</option>
-            </select>
+        <div id="results-container">
+            <figure>
+                <img loading="lazy" src="./images/alabama-img.webp" alt="2015 Alabama Football">
+                <figcaption>Alabama has both appeared in and won the most College Football Playoff Championships, with 6 and 3 respectively.</figcaption>
+            </figure>
+            <div class="results-dropdown">
+                <label for="year">Choose a year below to see who made the playoff.</label>
+                <select name="year" id="year">
+                    <option value="" disabled selected>Select a Year</option>
+                </select>
+                <h2 id="result-year">Choose a year above.</h2>
+                <p id="team-amount"></p>
+                <ul id="team-list"></ul>
+                <p id="final-result"></p>
+            </div>
         </div>
-    </body>
+        
+    </main>
     <footer>
         <p>&copy; | <span id="currentyear"></span> | Michael McGehee | Brazil</p>
         <p id="lastModified"></p>

@@ -1,8 +1,14 @@
 :root {
     --gold: #A57C00;
     --black: #000;
-    --white: #FFF;
+    --white: #E6E1D3;
     --border-standard: 1px solid rgb(0, 0, 0, 35%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 * {
@@ -103,11 +109,14 @@ header {
 
 #hero-caption {
     text-align: center;
-    margin-top: 0px;
+    margin: 0px;
+    padding: 4px 0px 10px 0px;
+    background-color: var(--white);
 }
 
 .title {
     text-align: center;
+    margin: 0px;
     width: 100%;
     border: var(--border-standard);
     border-radius: 2px;
@@ -219,6 +228,75 @@ input[type="submit"] {
     padding: 5px;
 }
 
+#results-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0px;
+}
+
+#results-container figure {
+    border: var(--border-standard);
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#results-container figure img {
+    width: 100%;
+}
+
+#results-container figure figcaption {
+    font-size: 0.7rem;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 70px;
+    padding: 20px 0px 20px 0px;
+    background: var(--white);
+    opacity: 0.7;
+}
+
+.results-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: var(--border-standard);
+    width: 100%;
+    border-radius: 2px;
+}
+
+.results-dropdown label {
+    margin: 15px 0px 10px 0px;
+}
+
+.results-dropdown select {
+    width: 60%;
+    border-radius: 2px;
+}
+
+#result-year {
+    margin: 10px 0px 0px 0px;
+    border-bottom: var(--border-standard);
+}
+
+#team-amount {
+    font-size: 1.3rem;
+    margin-bottom: 0px;
+}
+
+#team-list {
+    list-style: none;
+}
+
+#final-result {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#review-total {
+    text-align: center;
+}
+
 footer {
     background-color: var(--gold);
     text-align: center;
@@ -236,4 +314,105 @@ footer p {
 
 #lastModified {
     padding-bottom: 10px;
+}
+
+@media screen and (max-width: 640px) {
+
+    header {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 2fr 1fr;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .header-logo {
+        margin-left: 20px;
+    }
+
+    #page-title {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+        padding: 5px;
+    }
+
+    #header-nav {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #header-nav a {
+        font-size: clamp(0.9rem, 3vw, 1.5rem);
+    }
+
+    main {
+        padding: 0 10px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .hero-container {
+        display: grid;
+        grid-template-rows: 1fr 3fr 3fr;
+    }
+
+    .hero-container img, .hero-container h1, .hero-container p {
+        display: block;
+        position: static;
+        margin: 0px;
+        padding: 10px;
+    }
+
+    .hero-container img {
+        width: 100%;
+    }
+
+    .hero-container p {
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+    }
+
+    .current-format {
+        grid-template-columns: 1fr;
+    }
+
+    .current-format h2 {
+        width: 100%;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    
+    .format-dropdown select, .other-proposal, .user-proposal {
+        width: 95%;
+    }
+
+    .current-format p, .current-format li {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #results-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #results-container figure figcaption {
+        position: static;
+        font-size: 0.9rem;
+        padding: 10px;
+        opacity: 1;
+    }
+
+    .results-dropdown {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .results-dropdown select {
+        width: 95%;
+    }
+
 }

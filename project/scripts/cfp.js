@@ -32,14 +32,17 @@ const proposals = [
 
 const proposalSelect = document.getElementById("formats");
 
-proposals.forEach(function(proposal) {
-    const option = document.createElement("option");
-    option.value = proposal.proposalName
-    option.textContent = proposal.proposalName
-    proposalSelect.appendChild(option);
-})
+if (proposalSelect) {
+    proposals.forEach(function(proposal) {
+        const option = document.createElement("option");
+        option.value = proposal.proposalName
+        option.textContent = proposal.proposalName
+        proposalSelect.appendChild(option);
 
-proposalSelect.addEventListener("change", displayProposal);
+
+    });
+    proposalSelect.addEventListener("change", displayProposal);
+}
 
 function displayProposal() {
     const selectedName = proposalSelect.value;
@@ -50,9 +53,15 @@ function displayProposal() {
     if (!selectedProposal) return;
 
     document.getElementById("proposal-title").textContent = selectedProposal.proposalName;
-    document.getElementById("team-count").textContent = `Number of teams: ${selectedProposal.teamCount}`
-    document.getElementById("auto-qualify").textContent = `Automatic Qualifiers? ${selectedProposal.automaticQualify}`
-    document.getElementById("other-format").textContent = selectedProposal.description
+    document.getElementById("team-count").textContent = `Number of teams: ${selectedProposal.teamCount}`;
+    if (selectedProposal.automaticQualify == false) {
+        document.getElementById("auto-qualify").textContent = `No automatic qualifiers.`;
+    }
+    else {
+        document.getElementById("auto-qualify").textContent = `Includes automatic qualifiers.`;
+    }
+    
+    document.getElementById("other-format").textContent = selectedProposal.description;
 }
 
 const results = [
@@ -229,4 +238,62 @@ const results = [
         finalScore: "27-21"
     }
 ]
+const yearSelect = document.getElementById("year");
+const resultYear = document.getElementById("result-year");
+const teamAmount = document.getElementById("team-amount");
+const teamList = document.getElementById("team-list");
+const finalResult = document.getElementById("final-result");
 
+if (yearSelect) {
+    yearSelect.innerHTML += results.map(result => `<option value="${result.year}">${result.year}</option>`).join("");
+
+    yearSelect.addEventListener("change", displayResults);
+}
+
+function displayResults() {
+    if (!yearSelect || !resultYear) return;
+    const selectedYear = yearSelect.value;
+    
+    if (!selectedYear) {
+        resultYear.textContent = "Choose a year above.";
+        teamAmount.textContent = "";
+        teamList.innerHTML = "";
+        finalResult.textContent = "";
+        return;
+    }
+
+    const selectedResult = results.find(
+        result => result.year == selectedYear
+    );
+
+    resultYear.textContent = `College Football Playoff ${selectedResult.year}`;
+    teamAmount.textContent = `${selectedResult.teamAmount} team playoff`
+    teamList.innerHTML = Object.entries(selectedResult.teams).map(([seed, team]) => 
+    `<li>${seed.replace("_", " ").toUpperCase()}: ${team}</li>`).join("");
+    finalResult.innerHTML = `Championship game:<br> ${selectedResult.champion} ${selectedResult.finalScore} ${selectedResult.runnerUp}<br>${selectedResult.champion} wins the ${selectedResult.year} College Football Playoff`
+}
+
+const proposalForm = document.querySelector(".user-proposal");
+
+if (proposalForm) {
+    let submissionCount = localStorage.getItem("cfpSubmissionCount");
+
+    if (submissionCount === null) {
+        localStorage.setItem("cfpSubmissionCount", "0");
+    }
+
+    proposalForm.addEventListener("submit", function () {
+
+        let count = Number(localStorage.getItem("cfpSubmissionCount"));
+
+        count++;
+
+        localStorage.setItem("cfpSubmissionCount", count.toString());
+    });
+}
+const submissionDisplay = document.getElementById("review-total");
+
+if (submissionDisplay) {
+    const count = localStorage.getItem("cfpSubmissionCount") || 0;
+    submissionDisplay.textContent = `Proposals submitted: ${count}`;
+}
