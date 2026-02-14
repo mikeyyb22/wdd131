@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/cfp.css">
-    <script defer src="cfp.js"></script>
+    <script defer src="./scripts/cfp.js"></script>
 </head>
 <body>
     <header>
@@ -49,7 +49,13 @@
             <select name="formats" id="formats">
                 <option value="" disabled selected>Select a Format</option>
             </select>
-            <p id="other-format"></p>
+            <div class="other-proposal">
+                <h3 id="proposal-title">Please select an option above.</h3>
+                <p id="team-count"></p>
+                <p id="auto-qualify"></p>
+                <p id="other-format"></p>
+            </div>
+
         </div>
         <div class="sub-title">Think you can do better?</div>
         <form action="thank-you.html" method="get" class="user-proposal">

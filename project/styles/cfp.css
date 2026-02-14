@@ -182,12 +182,14 @@ header {
     border-radius: 2px;
 }
 
-#other-format {
+.other-proposal {
     width: 60%;
     margin: 5px;
     background-color: var(--gold);
-    opacity: 80%;
     color: var(--black);
+    border: var(--border-standard);
+    border-radius: 2px;
+    padding: 10px;
 }
 
 .user-proposal {
